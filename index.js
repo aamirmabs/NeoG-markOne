@@ -71,9 +71,11 @@ var questionBank = [
 
 // Conservative phrases
 // arrays of phrases that can be used interchangeably to make the program sound more natural sounding and conversation-ish
-var successPhrases = ["That's correct.", "You got it right.", "You get +1 points.", "Yep, that's right.", "You seem to know a lot about this topic.", "*clap clap clap emoji*", "Hooray! This is the right answer.", "You're doing a lot better that the other ones who took this test. ;-)"]
+var successPhrases = ["That's correct. ", "You got it right. ", "You get +1 points. ", "Yep, that's right. ", "You seem to know a lot about this topic. ", "*clap clap clap emoji* ", "Hooray! This is the right answer. ", "You're doing a lot better that the other ones who took this test. ;-) "]
 
-var failurePhrases = ["Oh no, that's wrong.", "Thank god we don't have negative marking.", "That doesn't sound right, maybe you could get the next one right?", "Hmmm... that's not correct.", "I wish that was right; but, its not.", "That's wrong, but come on, don't give up!"]
+var failurePhrases = ["Oh no, that's wrong. ", "Thank god we don't have negative marking. ", "That doesn't sound right, maybe you could get the next one right? ", "Hmmm... that's not correct. ", "I wish that was right; but, its not. ", "That's wrong, but come on, don't give up! "]
+
+var hintPhrases = ["Alright, here's a clue. ", "Let me help you out. ", "Looking for a hint? ", "Let me point you in the right direction. ", "Ummm, okay, I'll tell you what... ", "Don't tell anyone but here's a pointer. ", "I'm hoping this rings a bell. ", "Come on, this one's easy... "];
 
 // helper functions
 function pause() {
@@ -97,7 +99,7 @@ function getHint(question) {
 function getRandomIndex(array){
   // returns a random item from an array
   var len = array.length;
-  var index = Math.floor(Math.random() * length)
+  var index = Math.floor(Math.random() * len);
 
   return array[index];
 }
@@ -163,13 +165,13 @@ console.log(`
                   /\       , /  \_\_\|_/_)
                  /';;     /| \\\/.-. .-./     ／￣￣￣￣￣￣￣
                 / \;|    /. \,S'  -   - |    /  < 'Sup, dude! >
-               / -.;|    | '.SS     _|  ;   /＼＿＿＿＿＿＿＿＿
+               / -.;|   | '.SS     _|  ;   /＼＿＿＿＿＿＿＿＿
               ; '-.;\,   |'-.SS\   __  /S  /
               | _  '; \.  \  SSS\_____/SS
               |  '- '; \.  \_SSS[_____]SS
               \ '--.-';;-. __SSS/\    SSS
                \  .--' ';;'.=SSS'\ _\_SSS
-                '._ .-'' _';;..=.=.=.\.= \
+                '._ .-'' _';;..=.=.=.\.= \.
                    ;-._-'  _.;\.=.=.=.|.=|
          ,     _.-'    '"=._  ;\=.=__/__/
          )\ .''   __        ".;|.=.=.=./
@@ -187,31 +189,31 @@ console.clear();
 
 console.log(`
 
-          \ /////
+          ＼ /////
           |.   .|
-         (   _\ |
+         (   _＼ |
           |  =  |
-          |\___/
-      ___/|   \__
-    /' | '----' |'\
-   /   |        |  \
-  /~%  |        ;   \
- /   /\/        | \  \
- \  \ |         | /  /
-  '\ \|         |/ /'
-    '\;         |/'
+          |＼___/
+      ___/|   ＼__
+    /' | '----' |'＼
+   /   |        |  ＼
+  /~%  |        ;   ＼
+ /   /＼/        | ＼  ＼
+ ＼  ＼ |         | /  /
+  '＼ ＼|         |/ /'
+    '＼;         |/'
      (|         |)
       |_________|
        |    |  |
        |    |  |
        |____|__|
-       \    |  |
+       ＼    |  |
         |   )  )
         /   |  |
         |___|__|
-        \===|==|
+        ＼===|==|
         /   '-.'-.
-        \______)__)
+        ＼______)__)
 `);
 pause();
 console.log("You almost do poppy in your pants. Who wouldn't, right?\nPsst...we'll keep it a secret");
@@ -222,19 +224,19 @@ console.log(`
 
                        ___
                      ."///".        ／￣￣￣￣￣￣￣
-                    /|<> <>!\      /  < What's your name, bro? >
-                   /-|  ^  !-\    /＼＿＿＿＿＿＿＿＿
-                  /-- \_=_/ --\  /
+                    /|<> <>!＼      /  < What's your name, bro? >
+                   /-|  ^  !-＼    /＼＿＿＿＿＿＿＿＿
+                  /-- \_=_/ --＼  /
                   )---| W |---(
-                 /-\--| W |--/-\
+                 /-＼--| W |--/-＼
                 (_-_--|_-_|--___)
                (-___  -_-- _-- -_)
                )-_ _--_ _ ___--__|
                (___ --__  __ __--(
-              /-_  / __ -_ -__  \_\
-             _>/  -- /|___| _ \ -_ )
-            /--  _ - _/ _ \>\ -  -- \
-           ( / / /   > |~l \   \ \ \_)
+              /-_  / __ -_ -__  ＼_＼
+             _>/  -- /|___| _ ＼ -_ )
+            /--  _ - _/ _ \>\ -  -- ＼
+           ( / / /   > |~l \   ＼ ＼ ＼_)
            | |-' | |/  """  \| |   |_|
            L_|_|_|_/         L_L_|_l_)
 
@@ -259,7 +261,7 @@ for (var i = 0; i < questionBank.length; i++) {
   // check if it is an answer or a request for a hint
   if(userReply == 'H' || userReply == 'h'){
     // print the hint and then ask for answer
-    console.log("Hint: " + getHint(questionObj));
+    console.log("Hint: " + getRandomIndex(hintPhrases) + getHint(questionObj));
     userReply = getAnswer(question);
   }
 
@@ -267,11 +269,11 @@ for (var i = 0; i < questionBank.length; i++) {
   if(questionObj.answer.includes(userReply)){
     // tally points and congratulate the user
     correctAnswers++;
-    console.log("Correct answer");
+    console.log(getRandomIndex(successPhrases));
   }
   else {
     wrongAnswers++;
-    console.log("You got " + wrongAnswers + " question/s wrong.");
+    console.log( getRandomIndex(failurePhrases) + "You got " + wrongAnswers + " question/s wrong.");
   }
 
   console.log("Correct: " + correctAnswers + " Remaining: " + questionsLeft);
@@ -313,11 +315,11 @@ if(score >= 0.75){
           |  |        |.......sss@sss@ssss......|
           |  |        |..........s@ss@sss.......|
           |  |        |...........@ss@..........|
-           \  \       |............ss@..........|
-            \  '------+...........ss@...........|
-             \________ .........................|
+          ＼  ＼       |............ss@..........|
+           ＼  '------+...........ss@...........|
+            ＼________ .........................|
                       |.........................|
-                     /...........................\
+                     /...........................＼
                     |.............................|
                        |.......................|
                            |...............|
@@ -327,29 +329,29 @@ if(score >= 0.75){
   `);
 }
 else{
-  console.log("The Sphinx is not happy that you don't know anything about Gandhi...");
+  console.log("The Sphinx is not happy that you don't know much about Gandhi...");
 
   pause();
 
   console.log(`
                                                                 _
-                                                              _( (~\
-       _ _                        /                          ( \> > \
-   -/~/ / ~\                     :;                \       _  > /(~\/
-  || | | /\ ;\                   |l      _____     |;     ( \/    > >
-  _\\)\)\)/ ;;;                  '8o __-~     ~\   d|      \      //
- ///(())(__/~;;\                  "88p;.  -. _\_;.oP        (_._/ /
-(((__   __ \\   \                  '>,% (\  (\./)8"         ;:'  i
-)))--'.'-- (( ;,8 \               ,;%%%:  ./V^^^V'          ;.   ;.
-((\   |   /)) .,88  ': ..,,;;;;,-::::::'_::\   ||\         ;[8:   ;
- )|  ~-~  |(|(888; ..''::::8888oooooo.  :\'^^^/,,~--._    |88::  |
- |\ -===- /|  \8;; ':.      oo.8888888888:'((( o.ooo8888Oo;:;:'  |
+                                                              _( (~＼
+       _ _                         /                          ( ＼>>＼
+   -/~/ / ~＼                     :;                \       _  > /(~＼
+  || | | /\ ;＼                    |l      _____     |;      ( ＼/  >
+  _\ )\)\)/ ;;;                   '8o __-~     ~\   d|      \      //
+ ///(())(__/~;;＼                   "88p;.  -. _\_;.oP        (_._/ /
+(((__   __  ＼   ＼                  '>,% (\  (\./)8"         ;:'  i
+)))--'.'-- (( ;,8 ＼               ,;%%%:  ./V^^^V'          ;.   ;.
+((＼   |   /)) .,88  ': ..,,;;;;,-::::::'_::\   ||\         ;[8:   ;
+ )|  ~-~  |(|(888; ..''::::8888oooooo.  :\ ^^^/,,~--._    |88::  |
+ |＼ -===- /|  \8;; ':.      oo.8888888888:'((( o.ooo8888Oo;:;:'  |
  |_~-___-~_|   '-\.   '        'o'88888888b' )) 888b88888P""'     ;
  ; ~~~~;~~         "'--_'.       b'888888888;(.,"888b888"  ..::;-'
    ;      ;              ~"-....  b'8888888:::::.'8888. .:;;;''
       ;    ;                 ':::. ':::OOO:::::::.'OO' ;;;''
  :       ;                     '.      "'::::::''    .'
-    ;                           '.   \_              /
+    ;                           '.   ＼_              /
   ;       ;                       +:   ~~--  ':'  -';
                                    ':         : .::/
       ;                            ;;+_  :::. :..;;;

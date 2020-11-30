@@ -7,12 +7,12 @@
 // This should be similar to the app made in lesson One of levelZero.
 
 // initialize external libraries - readline-sync
-var readlineSync = require('readline-sync');
+var readlineSync = require("readline-sync");
 
 // initialize variables to track the status of quiz
 // username, correct answers, question array
-var quizName = 'Do you know Gandhi?'
-var userName = '';
+var quizName = "Do you know Gandhi?";
+var userName = "";
 var correctAnswers = 0;
 var wrongAnswers = 0;
 
@@ -20,69 +20,103 @@ var questionBank = [
   {
     question: "When is Mahatma Gandhi's birthday?",
     hint: "You get a holiday in the beginning of October.",
-    answer: ["october 2", "oct 2", "2 oct", "2 october", "2nd october", "2nd oct"]
+    answer: [
+      "october 2",
+      "oct 2",
+      "2 oct",
+      "2 october",
+      "2nd october",
+      "2nd oct",
+    ],
   },
   {
     question: "What is Mahatma Gandhi's mother tongue?",
     hint: "The same as Ambani and Adani.",
-    answer: ["gujrati", "gujju"]
+    answer: ["gujrati", "gujju"],
   },
   {
     question: "What was Mahatma Gandhi's profession?",
     hint: `It involved a lot of saying "My Lord" and "Your Honour".`,
-    answer: ["law", "lawyer", "barrister"]
+    answer: ["law", "lawyer", "barrister"],
   },
   {
-    question: "From which country did Mahatma Gandhi return to fight for freedom?",
-    hint: "It's two words and has the name of the continent in it. And a direction too.",
-    answer: ["sa", "south africa"]
+    question:
+      "From which country did Mahatma Gandhi return to fight for freedom?",
+    hint:
+      "It's two words and has the name of the continent in it. And a direction too.",
+    answer: ["sa", "south africa"],
   },
   {
     question: "Who assassinated Gandhi?",
     hint: "His last name has 5 letters - the first three are 'GOD'.",
-    answer: ["godse", "nathuram godse"]
+    answer: ["godse", "nathuram godse"],
   },
   {
     question: "True or False: His name is Mohandas Karamchand Mahatma Gandhi.",
     hint: "No-one, literally NO-ONE, names their kids Mahatma!!",
-    answer: ["no", "false"]
+    answer: ["no", "false"],
   },
   {
     question: "Mahatma Gandhi led a march to which place against the Salt Tax?",
     hint: "It sounds similar to 'Danda' (like a stick in hindi).",
-    answer: ["dandi", "dandi march"]
+    answer: ["dandi", "dandi march"],
   },
   {
     question: "Was Mahatma Gandhi nominated for Noble Peace Prize?",
     hint: "Yes, quite a few times actually!",
-    answer: ["yes", "y", "yep"]
+    answer: ["yes", "y", "yep"],
   },
   {
     question: "How many times was he nominated?",
     hint: "How many sides does a pentagon have?",
-    answer: ["5", "five"]
+    answer: ["5", "five"],
   },
   {
     question: "Did he win the Noble Peace Prize anytime?",
     hint: "If he did, he would be the first Indian in that category!",
-    answer: ["no", "n", "nope"]
-  }
+    answer: ["no", "n", "nope"],
+  },
 ];
 
 // Conservative phrases
 // arrays of phrases that can be used interchangeably to make the program sound more natural sounding and conversation-ish
-var successPhrases = ["That's correct. ", "You got it right. ", "You get +1 points. ", "Yep, that's right. ", "You seem to know a lot about this topic. ", "*clap clap clap emoji* ", "Hooray! This is the right answer. ", "You're doing a lot better that the other ones who took this test. ;-) "]
+var successPhrases = [
+  "That's correct. ",
+  "You got it right. ",
+  "You get +1 points. ",
+  "Yep, that's right. ",
+  "You seem to know a lot about this topic. ",
+  "*clap clap clap emoji* ",
+  "Hooray! This is the right answer. ",
+  "You're doing a lot better that the other ones who took this test. ;-) ",
+];
 
-var failurePhrases = ["Oh no, that's wrong. ", "Thank god we don't have negative marking. ", "That doesn't sound right, maybe you could get the next one right? ", "Hmmm... that's not correct. ", "I wish that was right; but, its not. ", "That's wrong, but come on, don't give up! "]
+var failurePhrases = [
+  "Oh no, that's wrong. ",
+  "Thank god we don't have negative marking. ",
+  "That doesn't sound right, maybe you could get the next one right? ",
+  "Hmmm... that's not correct. ",
+  "I wish that was right; but, its not. ",
+  "That's wrong, but come on, don't give up! ",
+];
 
-var hintPhrases = ["Alright, here's a clue. ", "Let me help you out. ", "Looking for a hint? ", "Let me point you in the right direction. ", "Ummm, okay, I'll tell you what... ", "Don't tell anyone but here's a pointer. ", "I'm hoping this rings a bell. ", "Come on, this one's easy... "];
+var hintPhrases = [
+  "Alright, here's a clue. ",
+  "Let me help you out. ",
+  "Looking for a hint? ",
+  "Let me point you in the right direction. ",
+  "Ummm, okay, I'll tell you what... ",
+  "Don't tell anyone but here's a pointer. ",
+  "I'm hoping this rings a bell. ",
+  "Come on, this one's easy... ",
+];
 
 // helper functions
 function pause() {
   // using readlineSync as a workaround to pause execution till enter is pressed
   readlineSync.question("\nPress Enter to proceed...", {
     hideEchoBack: true,
-    mask: ''
+    mask: "",
   });
 }
 
@@ -130,7 +164,7 @@ console.clear();
 
 console.log("\nOf course, you are brave.");
 pause();
-console.log('\nSlowly, you open the door...');
+console.log("\nSlowly, you open the door...");
 pause();
 console.log(`
 
@@ -150,14 +184,18 @@ console.log(`
 
 `);
 pause();
-console.log("\nComing to think of it that was quite a stupid thing to do... But, what the hell, zindagi na milegi dubara!");
+console.log(
+  "\nComing to think of it that was quite a stupid thing to do... But, what the hell, zindagi na milegi dubara!"
+);
 pause();
 console.log("\nP.S: Note to self - don't open random doors...");
 pause();
 
 console.clear();
 
-console.log("\nThe door shuts behind you and chilling some distance away is the Sphinx...");
+console.log(
+  "\nThe door shuts behind you and chilling some distance away is the Sphinx..."
+);
 pause();
 console.log(`
 
@@ -246,22 +284,28 @@ console.log(`
 
 userName = getAnswer("Enter your name: ");
 
-console.log('\nThe Sphinx says "Welcome ' + userName + '! We gonna play a quiz about Gandhi bro. You cool with that?".');
+console.log(
+  '\nThe Sphinx says "Welcome ' +
+    userName +
+    '! We gonna play a quiz about Gandhi bro. You cool with that?".'
+);
 pause();
-console.log("\nYou gulp and nod your head... mostly cause you don't have an option.")
+console.log(
+  "\nYou gulp and nod your head... mostly cause you don't have an option."
+);
 pause();
 
 // loop to ask all questions
 for (var i = 0; i < questionBank.length; i++) {
   var questionObj = questionBank[i];
-  var question = "\nQ: " + questionObj.question + '\nA: ';
+  var question = "\nQ: " + questionObj.question + "\nA: ";
   var questionsLeft = questionBank.length - i - 1;
 
   // ask each question to the user
   var userReply = getAnswer(question);
 
   // check if it is an answer or a request for a hint
-  if (userReply == 'H' || userReply == 'h') {
+  if (userReply == "H" || userReply == "h") {
     // print the hint and then ask for answer
     console.log("Hint: " + getRandomIndex(hintPhrases) + getHint(questionObj));
     userReply = getAnswer(question);
@@ -272,15 +316,18 @@ for (var i = 0; i < questionBank.length; i++) {
     // tally points and congratulate the user
     correctAnswers++;
     console.log(getRandomIndex(successPhrases));
-  }
-  else {
+  } else {
     wrongAnswers++;
-    console.log(getRandomIndex(failurePhrases) + "You got " + wrongAnswers + " question/s wrong.");
+    console.log(
+      getRandomIndex(failurePhrases) +
+        "You got " +
+        wrongAnswers +
+        " question/s wrong."
+    );
   }
 
   console.log("Correct: " + correctAnswers + " Remaining: " + questionsLeft);
 }
-
 
 pause();
 
@@ -318,9 +365,10 @@ if (score >= 0.75) {
 
   You have a couple of beers with the Sphinx and head home.
   `);
-}
-else {
-  console.log("The Sphinx is not happy that you don't know much about Gandhi...");
+} else {
+  console.log(
+    "The Sphinx is not happy that you don't know much about Gandhi..."
+  );
 
   pause();
 
